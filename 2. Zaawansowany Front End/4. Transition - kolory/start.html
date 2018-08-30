@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadanie 1 - zmiana koloru po najechaniu</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div.bg {
+            width: 100vw;
+            height: 100vh;
+            background-color: grey;
+            transition: .3s;
+        }
+
+        .circle {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            border: 3px solid white;
+            border-radius: 50%;
+        }
+
+        .circle:hover {
+            cursor: pointer;
+        }
+
+        p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 40px;
+            color: #fff;
+            text-transform: uppercase;
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            top: calc(50vh - 20px);
+            opacity: 0;
+            transition: .3s;
+        }
+
+        div.red {
+            top: 40px;
+            left: 40px;
+            background-color: red;
+        }
+
+        div.red:hover~div.bg {
+            background-color: red;
+        }
+
+        div.red:hover~div.bg>p.red {
+            opacity: 1;
+        }
+
+        div.green {
+            top: 40px;
+            right: 40px;
+            background-color: green;
+        }
+
+        div.green:hover~div.bg {
+            background-color: green;
+        }
+
+        div.green:hover~div.bg>p.green {
+            opacity: 1;
+        }
+
+        div.blue {
+            bottom: 40px;
+            left: 40px;
+            background-color: blue;
+        }
+
+        div.blue:hover~div.bg>p.blue {
+            opacity: 1;
+        }
+
+        div.orange:hover~div.bg>p.orange {
+            opacity: 1;
+        }
+
+        div.orange {
+            bottom: 40px;
+            right: 40px;
+            background-color: orange;
+        }
+
+        div.blue:hover~div.bg {
+            background-color: blue;
+        }
+
+        div.orange:hover~div.bg {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="red circle"></div>
+    <div class="green circle"></div>
+    <div class="blue circle"></div>
+    <div class="orange circle"></div>
+    <div class="bg">
+        <p class="red">Czerwony</p>
+        <p class="green">Zielony</p>
+        <p class="blue">Niebieski</p>
+        <p class="orange">Pomarańczowy</p>
+    </div>
+</body>
+
+</html>
