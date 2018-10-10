@@ -14,7 +14,6 @@
     .big {
       font-size: 30px
     }
-
   </style>
 </head>
 
@@ -23,7 +22,21 @@
   <ul>
 
   </ul>
+  <script>
+    const btn = document.querySelector("button");
+    let counter = 1;
 
+    function addElement() {
+      let li = document.createElement("li");
+      li.textContent = counter;
+      if (counter % 3 == 0) {
+        li.classList.add("big");
+      }
+      document.querySelector("ul").appendChild(li);
+      counter += 2;
+    }
+    btn.addEventListener("click", addElement);
+  </script>
 </body>
 
 </html>
