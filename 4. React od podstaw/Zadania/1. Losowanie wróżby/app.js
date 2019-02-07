@@ -31,11 +31,12 @@ class App extends React.Component {
     if (this.state.input === '') {
       alert('wpisz coś!');
     } else {
-      alert(`Wróżba "${this.state.input}" dodana do bazy danych`);
+      const input = this.state.input;
       this.setState({
         database: [...this.state.database, this.state.input],
         input: ''
       })
+      alert(`Wróżba "${this.state.input}" dodana do bazy danych. Aktualne wróżby w bazie to: ${this.state.database}`);
     }
 
   }
